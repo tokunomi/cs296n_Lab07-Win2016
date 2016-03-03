@@ -286,6 +286,7 @@
     <Content Include="Views\Auth\IndexRole.cshtml" />
     <Content Include="Views\Auth\EditRole.cshtml" />
     <Content Include="Views\Auth\ManageUserRoles.cshtml" />
+    <Content Include="Views\Auth\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

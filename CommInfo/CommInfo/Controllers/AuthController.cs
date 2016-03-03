@@ -15,6 +15,14 @@ namespace CommInfo.Controllers
     {
         private CommInfoContext db = new CommInfoContext();
 
+        // UNTESTED; MAY NOT WORK
+        // GET: /Auth/Index
+        public ActionResult Index()
+        {
+            return View(db.Users.ToList());
+            //return View(db.Members.ToList());
+        }
+
         // Hard coding a User Manager for now, to avoid having to do Dependency Injection
         UserManager<Member> userManager = new UserManager<Member>(
                 new UserStore<Member>(new CommInfoContext()));
@@ -139,7 +147,7 @@ namespace CommInfo.Controllers
         ///////////////////////////////////////////////////////
 
         // GET: /Auth/IndexRole
-        //[Authorize(Roles="Admin, Tester")]
+        [Authorize(Roles="Admin, Tester")]  // Authorizes the Admin and Tester roles
         public ActionResult IndexRole()
         {
             var roles = db.Roles.ToList();
